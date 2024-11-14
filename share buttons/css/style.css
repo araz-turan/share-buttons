@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:wght@400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #0a83e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+label {
+    background-color: #fff;
+    text-align: center;
+    width: 7rem;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    position: relative;
+    color: #0a83e3;
+    cursor: pointer;
+}
+label a {
+    color: #0a83e3;
+}
+.icons-bar {
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 3rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: -4rem;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1;
+    pointer-events: none;
+    transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.icons-bar::after {
+    content: '';
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #fff;
+    position: absolute;
+    bottom: -0.3rem;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+.icons-bar li {
+    width: 20%;
+    list-style: none;
+    text-align: center;
+}
+.icons-bar i {
+    font-size: 1.5rem;
+    transition: all 250ms ease-in-out;
+}
+.icons-bar li .fa-linkedin:hover {
+    color: #0c61bf;
+}
+.icons-bar li .fa-x-twitter:hover {
+    color: #000;
+}
+.icons-bar li .fa-youtube:hover {
+    color: #ff0000;
+}
+.icons-bar li .fa-discord:hover {
+    color: #5662f6;
+}
+label .h4-2 {
+    display: none;
+}
+label .h4-2, label .h4-1 {
+    transition: all 150ms ease;
+} 
+label .h4-2:hover, label .h4-1:hover {
+    letter-spacing: 0.25rem;
+}
+input#share-button:checked + label .h4-1 {
+    display: none;
+}
+input#share-button:checked + label .h4-2 {
+    display: block;
+}
+input#share-button:checked + label .icons-bar {
+    opacity: 1;
+    pointer-events: all;
+}
